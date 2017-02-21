@@ -11,11 +11,12 @@ class SpiderTest < MiniTest::Test
   def test_crawl
     url = "test/fixture.html"
     spider = Spider.new(url)
-    body = spider.crawl(class: "thumbnail col-inline")
 
-    assert_instance_of Nokogiri::XML::NodeSet, body
-    assert_equal(2, body.count)
+    body = spider.crawl(class: "a")
+    assert_equal(1, body.count)
+
+    body_1 = spider.crawl(class: "thumbnail col-inline")
+    assert_equal(2, body_1.count)
   end
-
 end
 
