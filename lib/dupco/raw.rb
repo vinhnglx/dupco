@@ -37,7 +37,7 @@ class Raw
   #
   # Returns title of element
   def title(element, title_class)
-    element.css(title_class).text.strip
+    element.css(title_class).text.strip unless element.css(title_class).empty?
   end
 
   # Public: Get src of image
@@ -52,7 +52,8 @@ class Raw
   #
   # Returns source of an image
   def image_src(element, image_class)
-    element.css(image_class).attribute('src').text
+    require 'uri'
+    URI(element.css(image_class).attribute('src').text).path unless element.css(image_class).empty?
   end
 
   # Public: Get url of a link
@@ -67,7 +68,7 @@ class Raw
   #
   # Returns source of link
   def hyper_link(element, link_class)
-    element.css(link_class).attribute('href').text
+    element.css(link_class).attribute('href').text unless element.css(link_class).empty?
   end
 end
 
