@@ -1,6 +1,6 @@
 require 'helper'
 
-class RawTest < MiniTest::Test
+class VikiRawTest < MiniTest::Test
   def setup
     url = "test/fixture.html"
     @spider = Spider.new(url)
@@ -8,7 +8,8 @@ class RawTest < MiniTest::Test
 
   def test_process
     body = @spider.crawl(class: ".thumbnail.col-inline")
-    raw = Raw.new(body).process
+    viki = Raw.new(body, VikiRaw.new)
+    raw = viki.process
 
     assert_equal 3, raw.count
     assert_instance_of Array, raw

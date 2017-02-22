@@ -5,7 +5,8 @@ class DupcoTest < MiniTest::Test
     url = "test/fixture.html"
     spider = Spider.new(url)
     body = spider.crawl(class: ".thumbnail.col-inline")
-    @raw = Raw.new(body).process
+    viki = Raw.new(body, VikiRaw.new)
+    @raw = viki.process
   end
 
   def test_show_duplicate_content
