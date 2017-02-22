@@ -1,8 +1,6 @@
 # Dupco
 
-Dupco is a simple tool to check duplicate content on a web page.
-
-In the first release, the tool can only check duplicate content from Viki - a global TV site.
+Dupco is a simple tool to check duplicate content on a web page. In the first release, the tool can only check duplicate content from Viki - a global TV site.
 
 ## Getting Started
 
