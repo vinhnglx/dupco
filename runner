@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/dupco'
+
+URL = 'https://www.viki.com/'
+
+spider = Spider.new(URL)
+body = spider.crawl(class: ".thumbnail.js-express-player")
+
+viki = Raw.new(body, VikiRaw.new)
+raw = viki.process
+
+dupco = Dupco.new(raw)
+puts dupco.show
+
