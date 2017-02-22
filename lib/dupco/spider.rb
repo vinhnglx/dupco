@@ -1,7 +1,3 @@
-require 'nokogiri'
-require 'selenium-webdriver'
-require 'phantomjs'
-
 class Spider
   attr_reader :driver
 
@@ -35,9 +31,9 @@ class Spider
   def crawl(options = {})
     raise MissingClassValue unless options.has_key?(:class)
 
-    klass = format_class(options[:class])
+    klass = options[:class]
 
-    page_source.css(klass)
+    _page_source.css(klass)
   end
 
   private
@@ -45,22 +41,8 @@ class Spider
   # Private: parse HTML content from web page
   #
   # Returns the html contents were parsed.
-  def page_source
+  def _page_source
     Nokogiri::HTML(driver.page_source)
-  end
-
-  # Private: format string to class format
-  #
-  # Parameter
-  #   class - The string of classes
-  #
-  # Example
-  #   format_class("container content")
-  #   # => ".container.content"
-  #
-  # Returns formated classes.
-  def format_class(klass)
-    "." + klass.squeeze(' ').strip.gsub(/\s/,'.')
   end
 end
 

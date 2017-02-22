@@ -11,11 +11,11 @@ class SpiderTest < MiniTest::Test
   end
 
   def test_crawl
-    body = @spider.crawl(class: "a")
+    body = @spider.crawl(class: ".a")
     assert_equal(1, body.count)
 
-    body_1 = @spider.crawl(class: "thumbnail col-inline")
-    assert_equal(2, body_1.count)
+    body_1 = @spider.crawl(class: ".thumbnail.col-inline")
+    assert_equal(3, body_1.count)
   end
 end
 
