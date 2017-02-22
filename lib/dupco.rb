@@ -2,5 +2,5 @@ require 'nokogiri'
 require 'selenium-webdriver'
 require 'phantomjs'
 
-require 'dupco/spider'
-require 'dupco/raw'
+require_relative 'dupco/spider'
+require_relative 'dupco/raw'
