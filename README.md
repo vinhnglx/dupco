@@ -10,7 +10,7 @@ Dupco is a simple tool to check duplicate content on a web page. In the first re
 
 Run `./runner` and see the result
 
-![DEMO](http://g.recordit.co/HYRLJdAot5.gif)
+![DEMO](http://g.recordit.co/D2vEbHBwnY.gif)
 
 ## Notes
 
