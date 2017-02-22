@@ -4,6 +4,8 @@
 
 Dupco is a simple tool to check duplicate content on a web page. In the first release, the tool can only check duplicate content from Viki - a global TV site.
 
+![SAMPLE](https://cloud.githubusercontent.com/assets/1997137/23226387/536be84c-f970-11e6-826d-66a465037a0a.png)
+
 ## Getting Started
 
 Run `./runner` and see the result
