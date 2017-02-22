@@ -1,5 +1,7 @@
 # Dupco
 
+[![Build Status](https://travis-ci.org/vinhnglx/dupco.svg?branch=master)](https://travis-ci.org/vinhnglx/dupco)
+
 Dupco is a simple tool to check duplicate content on a web page. In the first release, the tool can only check duplicate content from Viki - a global TV site.
 
 ## Getting Started
