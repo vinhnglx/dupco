@@ -23,16 +23,16 @@ class Raw
   #   body = [#<Nokogiri::XML::Element:0x3fe1b19d4dec name="div" ... ]
   #   raw = Raw.new(body)
   #   raw.process
-  #   # => [{title: "a", image_src: "http://exampl.org/1/thumbnail.jpg", url: "http://example.com/1"}]
+  #   # => ['{title: "a", image_src: "http://exampl.org/1/thumbnail.jpg", url: "http://example.com/1"}', '{...}']
   #
   # Returns array of hashes
   def process
     body.map {|element|
       {
-        title: _title(element, '.thumb-title'),
-        image_src: _image_src(element, '.thumbnail-img img'),
-        url: _hyper_link(element, '.thumbnail-img')
-      }
+        "title" => _title(element, '.thumb-title'),
+        "image_src" => _image_src(element, '.thumbnail-img img'),
+        "url" => _hyper_link(element, '.thumbnail-img')
+      }.to_s
     }
   end
 
