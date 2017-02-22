@@ -1,0 +1,1 @@
+class MissingClassValue < StandardError;end

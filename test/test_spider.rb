@@ -16,6 +16,8 @@ class SpiderTest < MiniTest::Test
 
     body_1 = @spider.crawl(class: ".thumbnail.col-inline")
     assert_equal(3, body_1.count)
+
+    assert_raises(MissingClassValue) { @spider.crawl(cl: ".thummbnail") }
   end
 end
 
