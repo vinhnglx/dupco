@@ -15,6 +15,8 @@ In this case, I wrote the VikiRaw class to parsing content from Viki.
 
 - Bug reports and pull requests are welcome on GitHub at https://github.com/vinhnglx/dupco.
 
+- The tool requires Ruby version >= 2.1.0
+
 ## License
 
 This library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
